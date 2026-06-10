@@ -457,7 +457,65 @@
     .swot-grid { grid-template-columns: 1fr; }
   }
 
-	
+/* ── CONTACT ── */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 3rem; align-items: start; }
+.contact-intro { font-size: 0.97rem; line-height: 1.8; color: var(--text-mid); margin-bottom: 2rem; }
+.contact-detail-list { display: flex; flex-direction: column; gap: 1rem; }
+.contact-detail-item {
+  display: flex; align-items: center; gap: 1rem;
+  text-decoration: none; padding: 0.9rem 1.1rem;
+  border-radius: 8px; background: var(--bg-card);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+section:nth-child(even) .contact-detail-item { background: var(--bg); }
+.contact-detail-item:hover { box-shadow: 0 4px 16px rgba(13,79,92,0.1); transform: translateX(4px); }
+.cd-icon { font-size: 1.3rem; flex-shrink: 0; }
+.cd-label { display: block; font-size: 0.7rem; font-weight: 700; color: var(--teal-mid); letter-spacing: 0.1em; text-transform: uppercase; }
+.cd-value { display: block; font-size: 0.88rem; color: var(--text-dark); margin-top: 0.1rem; }
+
+.contact-form-wrap {
+  background: var(--bg-card);
+  border-radius: 12px; padding: 2.2rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 40px rgba(13,79,92,0.09);
+}
+section:nth-child(even) .contact-form-wrap { background: var(--bg); }
+.cf-row { margin-bottom: 1.3rem; }
+.cf-label { display: block; font-size: 0.78rem; font-weight: 600; color: var(--teal-dark); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.45rem; }
+.cf-input {
+  width: 100%; padding: 0.75rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: 6px; font-family: 'Inter', sans-serif;
+  font-size: 0.9rem; color: var(--text-dark);
+  background: var(--bg); outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+section:nth-child(even) .cf-input { background: #fff; }
+.cf-input:focus { border-color: var(--teal-mid); box-shadow: 0 0 0 3px rgba(26,122,142,0.12); }
+.cf-textarea { resize: vertical; min-height: 120px; }
+.cf-error { font-size: 0.82rem; color: #E74C3C; background: #FEF3F0; border: 1px solid #E74C3C; border-radius: 6px; padding: 0.6rem 1rem; margin-bottom: 1rem; }
+.cf-submit {
+  width: 100%; padding: 0.85rem;
+  background: linear-gradient(135deg, var(--teal-dark), var(--teal-mid));
+  color: #fff; border: none; border-radius: 6px;
+  font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 600;
+  cursor: pointer; letter-spacing: 0.04em;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.cf-submit:hover { opacity: 0.9; transform: translateY(-2px); }
+.cf-success { text-align: center; padding: 2rem; }
+.cf-success-icon { font-size: 3rem; margin-bottom: 1rem; }
+.cf-success h3 { font-family: 'Playfair Display', serif; color: var(--teal-dark); font-size: 1.4rem; margin-bottom: 0.5rem; }
+.cf-success p { font-size: 0.88rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 1.5rem; }
+.cf-reset {
+  background: none; border: 1.5px solid var(--teal-mid); color: var(--teal-mid);
+  padding: 0.6rem 1.6rem; border-radius: 6px;
+  font-family: 'Inter', sans-serif; font-size: 0.88rem; font-weight: 600;
+  cursor: pointer; transition: background 0.2s, color 0.2s;
+}
+.cf-reset:hover { background: var(--teal-mid); color: #fff; }
+@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }	
 	
 </style>
 </head>
@@ -473,6 +531,7 @@
     <li><a href="#project">Project</a></li>
     <li><a href="#goals">Goals</a></li>
     <li><a href="#references">References</a></li>
+	  <li><a href="#contact" style="color:var(--gold-light)">✉ Contact</a></li>
   </ul>
 </nav>
 
@@ -490,7 +549,7 @@
       <p class="hero-bio">An energetic and dedicated Applied Sciences undergraduate from Rajarata University of Sri Lanka, passionate about Physics, computational problem-solving, and scientific research. Aspiring Government Scientist with a vision to contribute to national development through innovation and education.</p>
       <div class="hero-ctas">
     <a href="#about" class="btn-primary">Explore Portfolio</a>
-
+	 <a href="#contact" class="btn-outline">Get in Touch</a>
     <a href="Sashrika_CV.pdf" download class="btn-primary">
         Download CV
     </a>
@@ -837,7 +896,62 @@
   </div>
 </section>
 
-
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner reveal">
+    <p class="section-label">Say Hello</p>
+    <h2 class="section-title">Contact Me</h2>
+    <div class="section-divider"></div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="contact-intro">Whether you have an opportunity, a research collaboration, or simply want to connect — I'd love to hear from you. Fill in the form and I'll get back to you as soon as possible.</p>
+        <div class="contact-detail-list">
+          <a href="mailto:sasrikalakshani@gmail.com" class="contact-detail-item">
+            <span class="cd-icon">✉️</span>
+            <div><span class="cd-label">Email</span><span class="cd-value">sasrikalakshani@gmail.com</span></div>
+          </a>
+          <a href="tel:0719285634" class="contact-detail-item">
+            <span class="cd-icon">📞</span>
+            <div><span class="cd-label">Phone</span><span class="cd-value">0719 285 634</span></div>
+          </a>
+          <a href="https://www.linkedin.com/in/sashrika-fernando-89ba95414/" target="_blank" class="contact-detail-item">
+            <span class="cd-icon">🔗</span>
+            <div><span class="cd-label">LinkedIn</span><span class="cd-value">sashrika-fernando</span></div>
+          </a>
+          <div class="contact-detail-item">
+            <span class="cd-icon">📍</span>
+            <div><span class="cd-label">Location</span><span class="cd-value">Mount Lavinia, Sri Lanka</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <div id="contact-form-box">
+          <div class="cf-row">
+            <label class="cf-label" for="cf-name">Your Name</label>
+            <input class="cf-input" type="text" id="cf-name" placeholder="e.g. Kasun Perera" autocomplete="off">
+          </div>
+          <div class="cf-row">
+            <label class="cf-label" for="cf-email">Email Address</label>
+            <input class="cf-input" type="email" id="cf-email" placeholder="e.g. kasun@email.com" autocomplete="off">
+          </div>
+          <div class="cf-row">
+            <label class="cf-label" for="cf-message">Message</label>
+            <textarea class="cf-input cf-textarea" id="cf-message" rows="5" placeholder="Write your message here…"></textarea>
+          </div>
+          <div id="cf-error" class="cf-error" style="display:none"></div>
+          <button class="cf-submit" id="cf-btn" onclick="handleContactSubmit()">Send Message ✉️</button>
+        </div>
+        <div id="contact-success" class="cf-success" style="display:none">
+          <div class="cf-success-icon">✅</div>
+          <h3>Message Sent!</h3>
+          <p>Your message has been prepared in your email app. Thank you for reaching out — Sashrika will reply soon.</p>
+          <button class="cf-reset" onclick="resetContactForm()">Send Another</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+	
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -921,6 +1035,42 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
 }, { threshold: 0.12 });
 reveals.forEach(r => observer.observe(r));
+
+// ── Contact form ──
+function handleContactSubmit() {
+  const name = document.getElementById('cf-name').value.trim();
+  const email = document.getElementById('cf-email').value.trim();
+  const message = document.getElementById('cf-message').value.trim();
+  const errBox = document.getElementById('cf-error');
+
+  if (!name) { showErr('Please enter your name.'); return; }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showErr('Please enter a valid email address.'); return; }
+  if (!message) { showErr('Please write a message before sending.'); return; }
+
+  errBox.style.display = 'none';
+  const subject = encodeURIComponent('Portfolio Contact from ' + name);
+  const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
+  window.location.href = 'mailto:sasrikalakshani@gmail.com?subject=' + subject + '&body=' + body;
+
+  setTimeout(() => {
+    document.getElementById('contact-form-box').style.display = 'none';
+    document.getElementById('contact-success').style.display = 'block';
+  }, 600);
+}
+
+function showErr(msg) {
+  const e = document.getElementById('cf-error');
+  e.textContent = msg; e.style.display = 'block';
+}
+
+function resetContactForm() {
+  document.getElementById('cf-name').value = '';
+  document.getElementById('cf-email').value = '';
+  document.getElementById('cf-message').value = '';
+  document.getElementById('contact-form-box').style.display = 'block';
+  document.getElementById('contact-success').style.display = 'none';
+}
+	
 </script>
 </body>
 </html>
